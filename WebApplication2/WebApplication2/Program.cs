@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddScoped<IRacerService, RacerService>();
+builder.Services.AddScoped<ITrackRacesService, TrackRacesService>();
 
 var app = builder.Build();
 
